@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+@layer utilities {
+  .clip-ellipse {
+    clip-path: ellipse(100% 100% at 0% 50%);
+  }
+  .organic-curve-right {
+    border-radius: 0 4rem 4rem 0;
+  }
+}
