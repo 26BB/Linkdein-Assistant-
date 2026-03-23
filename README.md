@@ -11,9 +11,9 @@ You don't need to know how to code to use this tool! You can deploy your entirel
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F26BB%2FLinkdein-Assistant-)
 
 **How to set it up:**
-1. Click the **Deploy with Vercel** button above.
+1. Click the **Deploy with Vercel** button above. Vercel is the primary supported hosting platform for this project.
 2. Connect your GitHub account when prompted. Vercel will clone this code to your GitHub and instantly deploy a live website for you.
-3. Once deployed, click the generated link to visit your new live app!
+3. Once deployed, click the generated link to visit your new live app! **Note:** Make sure Vercel Authentication (SSO) is disabled in your Vercel project settings (Settings > Deployment Protection) so the app is publicly accessible and doesn't show a blank screen.
 4. Go to **Settings** in the app, pick an AI provider (like OpenAI or Gemini), and paste your API key (links to get these are below).
 
 ### Setting up LinkedIn Auto-Posting
@@ -31,6 +31,8 @@ To post directly to your personal LinkedIn feed from the app, you need to create
 ## 👩‍💻 For Developers: Running Locally
 
 If you want to modify the code, you can run the project locally. You only need Node.js installed. We have configured Vite to automatically mock Vercel's serverless functions so you do not need any special CLI!
+
+*Note: This project previously supported Netlify, but has been exclusively migrated to Vercel for serverless function support (`/api/*`) and SPA routing (`vercel.json`). Netlify configurations have been completely removed.*
 
 ```bash
 # 1. Clone & Install
