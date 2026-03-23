@@ -65,3 +65,11 @@ Open `http://localhost:5173` in your browser. The application will securely prox
 
 ## License
 MIT
+
+## FAQ
+
+**Q: If I share my deployed website link, can others see my API keys or posts?**
+No. All data (API keys, drafted posts, and LinkedIn connection tokens) is stored locally in the visitor's browser using `localStorage`. If someone else visits your deployed website link, they will see a completely fresh, empty version of the app. Your personal data never leaves your device and is never sent to a central server.
+
+**Q: Can I deploy this on Vercel instead of Netlify?**
+The frontend will successfully deploy on Vercel (e.g., `linkdein-assistant.vercel.app`), but the LinkedIn connection features **will not work**. The project relies on Netlify Serverless Functions (located in `netlify/functions/`) to proxy LinkedIn OAuth requests and bypass CORS restrictions. For the application to work correctly out of the box, we highly recommend deploying to Netlify using the button above.
