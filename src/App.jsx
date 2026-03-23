@@ -9,6 +9,7 @@ import EngagementAnalytics from './pages/EngagementAnalytics';
 import AudienceAnalytics from './pages/AudienceAnalytics';
 import LinkedInCallback from './pages/LinkedInCallback';
 import FloatingChatbot from './components/FloatingChatbot';
+import { isLinkedInConnected } from './services/linkedinApi';
 
 
 function App() {
@@ -51,7 +52,15 @@ function App() {
           <p className="text-[#5e6058] text-sm mt-2">Your API keys remain stored locally in your browser.</p>
         </div>
         <button
-          onClick={() => { setLoggedOut(false); setCurrentPath('dashboard'); }}
+          onClick={() => {
+            if (isLinkedInConnected()) {
+              setLoggedOut(false);
+              setCurrentPath('dashboard');
+            } else {
+              setLoggedOut(false);
+              setCurrentPath('settings');
+            }
+          }}
           className="px-8 py-3 bg-anthracite text-white rounded-full font-bold text-sm hover:opacity-90 transition-all"
         >
           Sign back in
