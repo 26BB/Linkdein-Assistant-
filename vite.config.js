@@ -56,6 +56,10 @@ function vercelApiPlugin() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    chunkSizeWarningLimit: 1600,
+  },
+
   plugins: [react(), vercelApiPlugin()],
   server: {
     port: 5173,
